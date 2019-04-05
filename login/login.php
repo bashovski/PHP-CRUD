@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 
+	<script src="../external.js"></script>
 	<script src="../login/url_parameters.js"></script>
 <?php
 
 	include( "../sql/sql_config.php" );
-	session_start();
+	include( "../user/session.php" );
+
+	check_session( "../index.php" );
 
 	// Internal input handling
 	if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
@@ -31,8 +34,8 @@
 	<head>
 		<!-- CDNs -->
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="../css/navbar.css">
 		<link rel="stylesheet" href="../css/loginform.css">
+		<link rel="stylesheet" href="../css/snackbar.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -44,35 +47,13 @@
 	<title>CRUD - Login</title>
 <body>
 
-	<nav class="navbar navbar-expand-sm navbar-dark rounded-bottom" id="nav_id">
-	  <!-- account icon -->
-	  <a class="navbar-brand" href="login/login.php">
-	  	<?php
-	  	?>
-	    <img src="../resources/usericon.png" alt="logo" id="usericonid">
-	  </a>
-	  
-	  <!-- listitems -->
-	  <ul class="navbar-nav">
-	    <li class="nav-item">
-	      <a class="nav-link nav_listitems" href="">Home</a>
-	    </li>
-	    <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	        	<a class="dropdown-item" href="#">Dashboard</a>
-	        	<a class="dropdown-item" href="#">Settings</a>
-	        	<a class="dropdown-item" href="#">Privacy</a>
-	        </div>
-	    </li>
-	    <li class="nav-item">
-	      <a class="nav-link" href="#">About us</a>
-	    </li>
-	    <li class="nav-item">
-	      <a class="nav-link" href="#">Features</a>
-	    </li>
-	  </ul>
-	</nav>
+	<!-- Navbar -->
+	<script>
+		$( function(){
+      		$( "#navbar_include" ).load( "../navbar.php" ); 
+    	} );
+	</script>
+	<div id="navbar_include"></div>
 	
 	<!-- main rect container -->
 	<div id="mainbox">
@@ -86,10 +67,12 @@
 	<!--<div id="login_button">Login</div>-->
 	<div id="signup">Still haven't joined us? What are you waiting for? Get in here!</div>
 
-	<?php
-		//	showing errors for wrong inserted credentials during login (reverting username form back to inserted username and displaying error as a snackbar popup)
-		print( "<script>updateLoginPage();</script>" );
-	?>
+	<!-- Snackbar for errors-->
+	<div id="snackbar"></div>
+
+	<!-- showing errors for wrong inserted credentials during login (reverting username form back to inserted username and displaying error as a snackbar popup) -->
+	<script>updateLoginPage();</script>
+
 </body>
 
 </html>
