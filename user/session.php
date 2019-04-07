@@ -1,6 +1,5 @@
 <?php
 	
-	include( "./sql/sql_config.php" );
 	session_start();
 	if( isset( $_SESSION[ 'session_username' ] ) ) {
 		$user = $_SESSION[ 'session_username' ];
@@ -9,8 +8,23 @@
 		$row = mysqli_fetch_array( $resultset, MYSQLI_ASSOC );
 		$login_session = $row[ 'Username' ];
 	    if( !isset( $login_session ) ) {
-	    	$_SESSION[ 'not_logged' ] = true;
+	    	$_SESSION[ 'logged' ] = false;
+	    } else {
+	    	$_SESSION[ 'logged' ] = true;
 	    }
+	} else $_SESSION[ 'logged' ] = false;
+
+
+	function check_session( $path ) {
+		if( isset( $_SESSION[ 'logged' ] ) && $_SESSION[ 'logged' ] == true ) 
+			return header( "location: $path" );
+	}
+
+	function logout() {
+		if( isset( $_SESSION[ 'logged' ] ) && $_SESSION[ 'logged' ] == true ) {
+			session_destroy();
+			header( "location: ../index.php" );
+		}
 	}
 
 ?>
