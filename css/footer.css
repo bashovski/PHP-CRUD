@@ -1,0 +1,22 @@
+#main {
+    position: fixed;
+    height: 15%;
+    bottom: 0;
+    width: 100%;
+}
+#footer_year {
+	font-weight: bold;
+	color: #ffffff;
+	user-select: none;
+}
+#footer_year:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+.icon_prop:hover {
+	filter: brightness( 0 );
+	cursor: pointer;
+}
+.icon_prop {
+	user-select: none;
+}
