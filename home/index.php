@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <!-- https://www.canva.com/learn/wp-content/uploads/2016/01/Palette_20-tb-800x0.jpg   (color scheme to be implemented.)-->
 
-<!-- 
-	buglist:
-
-	popraviti problem sa ucitavanjem usericon.png kod index.php zbog neprilagodjenog pristupa parent-directoryu.
-
--->
 
 <?php 
 	
 	include( "../sql/sql_config.php" );
 	include( "../user/session.php" );
+	include( "../sql/sql_onlineUsers.php" ); 
+
 ?>
 
 <html>
@@ -28,7 +24,7 @@
 	<title>CRUD - Home</title>
 <body>
 
-	<!-- Navbar -->
+	<!-- Navbar & Footer -->
 	<script>
 		$( function() {
       		$( "#navbar_include" ).load( "../external/navbar.php" );
@@ -39,6 +35,9 @@
 	</script>
 	<div id="navbar_include"></div>
 	<div id="footer_container"></div>
+	<?php
+		echo( onlineUsers_count() );
+	?>
 
 </body>
 </html>
