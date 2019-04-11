@@ -9,11 +9,10 @@ function updateLoginPage() {
 		p = unescape( temp[ 1 ] );
 
 		document.getElementById( "user_form" ).value = l;
-
 		if( p == "failed" ) {
-			
+			document.getElementById( "snackbar" ).innerHTML = "You have inserted incorrect account credentials.<br>Please try again.";
+			snackbar_show();			
 		}
-
 	} catch( err ) {
 		console.log( "updateLoginPage() - URL w/o params | ERROR: "+ err );
 	}

@@ -6,14 +6,14 @@
 <body>
 	<nav class="navbar navbar-expand-sm navbar-dark rounded-bottom" id="nav_id">
 	  <!-- account icon -->
-	  <a class="navbar-brand" href="login/login.php">
+	  <a class="navbar-brand" href="../login/login.php">
 	    <img src="../resources/usericon.png" alt="logo" id="usericonid">
 	  	</a>
 	  
 	  	<!-- listitems -->
 	  	<ul class="navbar-nav">
 	    <li class="nav-item">
-	    	<a class="nav-link nav_listitems" href="">Home</a>
+	    	<a class="nav-link nav_listitems" href="../index/index.php">Home</a>
 	    </li>
 	    <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>

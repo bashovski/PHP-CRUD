@@ -11,9 +11,9 @@
 	function js_sql_loaded() {
 		print( "<script>console.log('DATABASE - Successfully connected to SQL Database.');</script>" );
 	}
-
-	$conn = mysqli_connect( SQL_SERVERNAME, SQL_USER, SQL_PASS, SQL_DATABASE );
-	if( $conn -> connect_error ) return js_sql_failed( $conn->connect_error );
+ 
+	$GLOBALS[ 'conn' ] = mysqli_connect( SQL_SERVERNAME, SQL_USER, SQL_PASS, SQL_DATABASE );
+	if( $GLOBALS[ 'conn' ] -> connect_error ) return js_sql_failed( $GLOBALS[ 'conn' ]->connect_error );
 	else js_sql_loaded();
 
 ?>

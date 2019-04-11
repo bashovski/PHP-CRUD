@@ -1,19 +1,32 @@
 <?php
+	
+	session_start();
+	if( isset( $_SESSION[ 'session_username' ] ) ) {
+		$user = $_SESSION[ 'session_username' ];
+		$query = "SELECT Username FROM crud_database.Users WHERE Username = '$user' LIMIT 1;";
+		$resultset = mysqli_query( $GLOBALS[ 'conn' ], $query );
+		$row = mysqli_fetch_array( $resultset, MYSQLI_ASSOC );
+		$login_session = $row[ 'Username' ];
+	    if( !isset( $login_session ) ) {
+	    	$_SESSION[ 'logged' ] = false;
+	    } else {
+	    	$_SESSION[ 'logged' ] = true;
+	    	$query = "UPDATE crud_database.Users SET LastOnline = NOW() WHERE Username = '$user';";
+	    	mysqli_query( $GLOBALS[ 'conn' ], $query );
+	    }
+	} else $_SESSION[ 'logged' ] = false;
 
-	// Definitions for further use while connecting to database.
-	define( 'SQL_USER', "root" );
-	define( 'SQL_PASS', "" );
-	define( 'SQL_SERVERNAME', "localhost:3306" );
-	define( 'SQL_DATABASE', "crud_database" );
-	function js_sql_failed( $error ) {
-		print( "<script>console.log('Couldn't connect to database. $error');</script>" );
+
+	function check_session( $path ) {
+		if( isset( $_SESSION[ 'logged' ] ) && $_SESSION[ 'logged' ] == true ) 
+			return header( "location: $path" );
 	}
-	function js_sql_loaded() {
-		print( "<script>console.log('DATABASE - Successfully connected to SQL Database.');</script>" );
+
+	function logout() {
+		if( isset( $_SESSION[ 'logged' ] ) && $_SESSION[ 'logged' ] == true ) {
+			session_destroy();
+			header( "location: ../home/index.php" );
+		}
 	}
- 
-	$GLOBALS[ 'conn' ] = mysqli_connect( SQL_SERVERNAME, SQL_USER, SQL_PASS, SQL_DATABASE );
-	if( $GLOBALS[ 'conn' ] -> connect_error ) return js_sql_failed( $GLOBALS[ 'conn' ]->connect_error );
-	else js_sql_loaded();
 
 ?>

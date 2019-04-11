@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-	<script src="../external.js"></script>
-	<script src="/register_errors.js"></script>
+	<script src="../external/external.js"></script>
+	<script src="register_errors.js"></script>
 <?php 
 
 	include( "../sql/sql_config.php" );
@@ -10,9 +10,9 @@
 
 	if( $_SERVER[ "REQUEST_METHOD" ] == "POST" ) {
 
-		$temp_username = mysqli_real_escape_string( $conn, $_POST[ 'username' ] );
-		$temp_password = mysqli_real_escape_string( $conn, $_POST[ 'password' ] );
-		$temp_mail = mysqli_real_escape_string( $conn, $_POST[ 'mail' ] );
+		$temp_username = mysqli_real_escape_string( $GLOBALS[ 'conn' ], $_POST[ 'username' ] );
+		$temp_password = mysqli_real_escape_string( $GLOBALS[ 'conn' ], $_POST[ 'password' ] );
+		$temp_mail = mysqli_real_escape_string( $GLOBALS[ 'conn' ], $_POST[ 'mail' ] );
 
 		// RegEx validation
 	    if( regex_validate( regex_mail_pattern, $temp_mail ) ) return header( "location: /register/register.php?error=mail" );
@@ -24,7 +24,7 @@
 	    if( strlen( $temp_username ) < 3 || strlen( $temp_username ) > 24 ) return header( "location: /register/register.php?error=username" );
 
 		$query = "SELECT * FROM crud_database.Users WHERE Username = '$temp_username' OR Mail = '$temp_mail'";
-		$resultset = mysqli_query( $conn, $query );
+		$resultset = mysqli_query( $GLOBALS[ 'conn' ], $query );
 	    $row = mysqli_fetch_array( $resultset, MYSQLI_ASSOC );
 	    $count = mysqli_num_rows( $resultset );
 	    if( $count ) {
@@ -32,7 +32,7 @@
 	    } else {
 
 			$query = "INSERT INTO crud_database.Users( `Username`, `Password`, `Mail` ) VALUES ( '$temp_username', '$temp_password', '$temp_mail' )";
-			mysqli_query( $conn, $query );
+			mysqli_query( $GLOBALS[ 'conn' ], $query );
 
 			$_SESSION[ 'session_username' ] = $temp_username;
 			header( "location: ../home/index.php?registration=complete" ); die();
@@ -58,7 +58,7 @@
 	<title>CRUD - Register</title>
 <body>
 
-	<!-- Navbar -->
+	<!-- Navbar & Footer -->
 	<script>
 		$( function() {
       		$( "#navbar_include" ).load( "../external/navbar.php" ); 
@@ -69,6 +69,7 @@
 	</script>
 	<div id="navbar_include"></div>
 	<div id="footer_container"></div>
+	<!-- Registration form -->
 	<div id="mainbox">
 		Create a New Account
 		<form action="" method="POST">
