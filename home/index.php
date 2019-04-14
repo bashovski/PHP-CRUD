@@ -5,6 +5,7 @@
 	include( "../sql/sql_config.php" );
 	include( "../user/session.php" );
 	include( "../sql/sql_onlineUsers.php" );
+	include( "../sql/sql_groups.php" );
 
 ?>
 
@@ -35,8 +36,10 @@
 	<div id="navbar_include"></div>
 	<div id="footer_container"></div>
 	<div id="central_body">
+		<!-- Groups icon -->
 		<a href="../groups/index.php"><img id="group_img" src="../resources/group_icon.png"></a>
-		<div style="text-align: center;" id="groups_num">705 groups created</div>
+		<!-- Groups num -->
+		<?php groups_created(); ?>
 	</div>
 
 </body>
