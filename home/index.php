@@ -38,8 +38,13 @@
 	<div id="central_body">
 		<!-- Groups icon -->
 		<a href="../groups/index.php"><img id="group_img" src="../resources/group_icon.png"></a>
+		<!-- Users icon -->
+		<a href="../groups/index.php"><img id="users_img" src="../resources/users_icon.png"></a>
 		<!-- Groups num -->
-		<?php groups_created(); ?>
+		<?php
+			groups_created();
+			onlineUsers_label();
+		?>
 	</div>
 
 </body>

@@ -10,12 +10,33 @@
 	align-items: center;
 }
 #group_img:hover {
-
 	filter: brightness( 0 );
 }
 #groups_num {
 	position: absolute;
     left: 50%;
+ 	top: 80%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 50%;
+}
+#users_img {
+	position: absolute;
+	display: inline;
+	margin: auto;
+	top: 45%;
+	left: 28.2%;
+	width: 64px;
+	height: 64px;
+	user-select: none;
+	align-items: center;
+}
+#users_img:hover {
+	filter: brightness( 0 );
+}
+#users_num {
+	position: absolute;
+    left: 30%;
  	top: 80%;
     transform: translate(-50%, -50%);
     width: 40%;
