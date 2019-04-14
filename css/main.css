@@ -1,0 +1,24 @@
+#group_img {
+	position: absolute;
+	display: inline;
+	margin: auto;
+	top: 45%;
+	left: 48.3%;
+	width: 64px;
+	height: 64px;
+	user-select: none;
+	align-items: center;
+}
+#group_img:hover {
+
+	filter: brightness( 0 );
+}
+#groups_num {
+
+	position: absolute;
+	display: inline;
+	left: 50%;
+	text-align: center;
+	top: 47%;
+
+}

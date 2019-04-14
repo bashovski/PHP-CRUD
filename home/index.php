@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <!-- https://www.canva.com/learn/wp-content/uploads/2016/01/Palette_20-tb-800x0.jpg   (color scheme to be implemented.)-->
+<?php
 
-
-<?php 
-	
 	include( "../sql/sql_config.php" );
 	include( "../user/session.php" );
-	include( "../sql/sql_onlineUsers.php" ); 
+	include( "../sql/sql_onlineUsers.php" );
 
 ?>
 
@@ -18,6 +16,7 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<meta name="description" content="CRUD made with PHP.">
+		<link rel="stylesheet" href="../css/main.css">
 		<meta name="keywords" content="PHP, CRUD, mySQL, Create, Retrieve, Update, Delete, Coding, HTML, CSS, JS, JavaScript">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
@@ -35,6 +34,10 @@
 	</script>
 	<div id="navbar_include"></div>
 	<div id="footer_container"></div>
+	<div id="central_body">
+		<a href="../groups/index.php"><img id="group_img" src="../resources/group_icon.png"></a>
+		<div id="groups_num">705 groups created</div>
+	</div>
 	<?php
 		echo( onlineUsers_count() );
 	?>

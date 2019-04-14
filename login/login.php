@@ -17,15 +17,15 @@
 
 		$query = "SELECT * FROM crud_database.Users WHERE Username = '$temp_username' AND Password = '$temp_password' LIMIT 1;";
 		$resultset = mysqli_query( $GLOBALS[ 'conn' ], $query );
-	    $row = mysqli_fetch_array( $resultset, MYSQLI_ASSOC );
-	    $count = mysqli_num_rows( $resultset );
+		$row = mysqli_fetch_array( $resultset, MYSQLI_ASSOC );
+		$count = mysqli_num_rows( $resultset );
 		if( $count ) {
 			$_SESSION[ 'session_username' ] = $temp_username;
 			//print( "<script>console.log( 'Logged in' );</script>");
 			header( "location: ../home/index.php" ); die();
 		} else {
 			header( "location: ../login/login.php?name=$temp_username&type=failed" );
-			print( "<script>updateLoginPage();</script>" ); 
+			print( "<script>updateLoginPage();</script>" );
 		}
 	}
 ?>
@@ -50,7 +50,7 @@
 	<!-- Navbar -->
 	<script>
 		$( function(){
-      		$( "#navbar_include" ).load( "../external/navbar.php" ); 
+      		$( "#navbar_include" ).load( "../external/navbar.php" );
     	} );
 		$( function() {
       		$( "#footer_container" ).load( "../external/footer.php" );
@@ -58,7 +58,7 @@
 	</script>
 	<div id="navbar_include"></div>
 	<div id="footer_container"></div>
-	
+
 	<!-- main rect container -->
 	<div id="mainbox">
 		Log into CRUD App

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<script src="../external/external.js"></script>
 	<script src="register_errors.js"></script>
-<?php 
+<?php
 
 	include( "../sql/sql_config.php" );
 	include( "../regex/regex.php" ); // patterns and pattern validation
@@ -61,7 +61,7 @@
 	<!-- Navbar & Footer -->
 	<script>
 		$( function() {
-      		$( "#navbar_include" ).load( "../external/navbar.php" ); 
+      		$( "#navbar_include" ).load( "../external/navbar.php" );
     	} );
 		$( function() {
       		$( "#footer_container" ).load( "../external/footer.php" );
@@ -77,7 +77,7 @@
 			<input class="inputforms" id="pass_form" type="password" name="password" placeholder=" New password" spellcheck="false"><br>
 			<input class="inputforms" id="mail_form" type="text" name="mail" placeholder=" Your e-mail" spellcheck="false"><br>
 		  	<input id="register_button" type="submit" value="Sign Up">
-		</form>	
+		</form>
 	</div>
 	<div id="notice" style="font-size: 12px;">By clicking 'Sign Up', you are accepting our <a href="../tos.php" id="tos_props">ToS</a> and <a href="../user/privacy.php" id="tos_props">PP</span>.</div>
 	<div id="login">Already have an account? Proceed to login.</div>
