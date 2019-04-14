@@ -36,11 +36,8 @@
 	<div id="footer_container"></div>
 	<div id="central_body">
 		<a href="../groups/index.php"><img id="group_img" src="../resources/group_icon.png"></a>
-		<div id="groups_num">705 groups created</div>
+		<div style="text-align: center;" id="groups_num">705 groups created</div>
 	</div>
-	<?php
-		echo( onlineUsers_count() );
-	?>
 
 </body>
 </html>

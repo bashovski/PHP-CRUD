@@ -3,7 +3,7 @@
 	display: inline;
 	margin: auto;
 	top: 45%;
-	left: 48.3%;
+	left: 48.2%;
 	width: 64px;
 	height: 64px;
 	user-select: none;
@@ -14,11 +14,10 @@
 	filter: brightness( 0 );
 }
 #groups_num {
-
 	position: absolute;
-	display: inline;
-	left: 50%;
-	text-align: center;
-	top: 47%;
-
+    left: 50%;
+ 	top: 80%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 50%;
 }
