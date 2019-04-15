@@ -9,7 +9,7 @@
 	  <a class="navbar-brand" href="../login/login.php">
 	    <img src="../resources/usericon.png" alt="logo" id="usericonid">
 	  	</a>
-	  
+
 	  	<!-- listitems -->
 	  	<ul class="navbar-nav">
 	    <li class="nav-item">
@@ -31,5 +31,6 @@
 	    </li>
 	  </ul>
 	</nav>
+	<!-- Avatar request -->
 </body>
 </html>

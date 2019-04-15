@@ -1,5 +1,5 @@
 <?php
-	
+
 	session_start();
 	if( isset( $_SESSION[ 'session_username' ] ) ) {
 		$user = $_SESSION[ 'session_username' ];
@@ -18,7 +18,7 @@
 
 
 	function check_session( $path ) {
-		if( isset( $_SESSION[ 'logged' ] ) && $_SESSION[ 'logged' ] == true ) 
+		if( isset( $_SESSION[ 'logged' ] ) && $_SESSION[ 'logged' ] == true )
 			return header( "location: $path" );
 	}
 
