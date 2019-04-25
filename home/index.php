@@ -6,7 +6,6 @@
 	include( "../user/session.php" );
 	include( "../sql/sql_onlineUsers.php" );
 	include( "../sql/sql_groups.php" );
-
 ?>
 
 <html>
@@ -18,7 +17,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<meta name="description" content="CRUD made with PHP.">
 		<link rel="stylesheet" href="../css/main.css">
-		<meta name="keywords" content="PHP, CRUD, mySQL, Create, Retrieve, Update, Delete, Coding, HTML, CSS, JS, JavaScript">
+		<link rel="stylesheet" href="../css/toolkit.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<title>CRUD - Home</title>
@@ -49,6 +48,8 @@
 			todayUsers_label();
 		?>
 	</div>
-
+	<?php
+		//include( "../sql/sql_avatar.php" );
+	?>
 </body>
 </html>

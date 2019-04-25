@@ -16,7 +16,6 @@
 	    }
 	} else $_SESSION[ 'logged' ] = false;
 
-
 	function check_session( $path ) {
 		if( isset( $_SESSION[ 'logged' ] ) && $_SESSION[ 'logged' ] == true )
 			return header( "location: $path" );

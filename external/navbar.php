@@ -32,5 +32,13 @@
 	  </ul>
 	</nav>
 	<!-- Avatar request -->
+	<script>
+	$( document ).ready( function() {
+	    $( "#usericonidd" ).load( "../sql/sql_avatar.php" );
+	});
+	</script>
+	<?php
+		require( "../sql/sql_avatar.php" );
+	?>
 </body>
 </html>
