@@ -19,7 +19,7 @@
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	        	<a class="dropdown-item" href="#">Dashboard</a>
-	        	<a class="dropdown-item" href="#">Settings</a>
+	        	<a class="dropdown-item" href="../user/settings.php">Settings</a>
 	        	<a class="dropdown-item" href="#">Privacy</a>
 	        </div>
 	    </li>

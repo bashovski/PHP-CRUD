@@ -17,5 +17,16 @@
 		}
 		return ( $GROUP_SORT_TYPE );
 	}
+	function getUserGroup() {
+		$query = "SELECT UserGroup FROM crud_database.Users WHERE Username = '". $_SESSION[ 'session_username' ]. "' LIMIT 1";
+		$resultset = mysqli_query( $GLOBALS[ 'conn' ], $query );
+		if( $resultset -> num_rows > 0 ) {
+			$data = mysqli_fetch_assoc( $resultset );
+			$query = "SELECT GroupName FROM crud_database.Groups WHERE GroupID = ". $data[ 'UserGroup' ] ."LIMIT 1";
+			$resultset = mysqli_query( $GLOBALS[ 'conn' ], $query );
+			$data = mysqli_fetch_assoc( $resultset );
+			return ( $data[ 'GroupName' ] );
+		} else return (null);
+	}
 
 ?>

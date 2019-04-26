@@ -17,7 +17,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<meta name="description" content="CRUD made with PHP.">
 		<link rel="stylesheet" href="../css/main.css">
-		<link rel="stylesheet" href="../css/toolkit.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<title>CRUD - Home</title>
