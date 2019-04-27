@@ -34,7 +34,7 @@
 	<!-- Avatar request -->
 	<script>
 	$( document ).ready( function() {
-	    $( "#usericonidd" ).load( "../sql/sql_avatar.php" );
+	    $( "#usericonid" ).load( "../sql/sql_avatar.php" );
 	});
 	</script>
 	<?php

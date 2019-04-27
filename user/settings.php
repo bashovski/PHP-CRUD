@@ -31,7 +31,30 @@
 	</script>
 	<div id="navbar_include"></div>
 	<div id="footer_container"></div>
-	<div id="mainbox">
+	<!-- Side nav -->
+	<div id="mainbox" class="col-sm-2">
+		<br>
+		<h3>User settings</h3>
+		<nav class="navbar bg-dark navbar-dark rounded-bottom">
+		  <ul class="navbar-nav">
+		    <li class="nav-item">
+		      <a class="nav-link" href="?settings=credentials" id="listitem_credentials">Account credentials</a>
+		    </li>
+		    <li class="nav-item" id="listitem_profile" >
+		      <a class="nav-link" href="?settings=profile">Profile settings</a>
+		    </li>
+		    <li class="nav-item" id="listitem_pref">
+		      <a class="nav-link" href="?settings=pref">Preferences</a>
+		    </li>
+			<li class="nav-item" id="listitem_adv">
+		      <a class="nav-link" href="?settings=adv">Advanced</a>
+		    </li>
+		  </ul>
+		</nav>
+		<hr class="d-sm-none">
 	</div>
+	<!-- Template load -->
+	<script src="load_settings.js"></script>
+	<div id="template_body"></div>
 </body>
 </html>
